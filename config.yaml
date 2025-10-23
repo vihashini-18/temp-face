@@ -1,0 +1,44 @@
+# Configuration for Face Recognition Project
+
+
+PATHS:
+  
+  DATASET_DIR: "dataset"
+  EMBEDDINGS_DIR: "embeddings"
+  FAISS_INDEX_FILE: "faiss_index.bin"
+  LABELS_FILE: "labels.pkl"
+  YOLO_FACE_MODEL: "models/yolov8n-face.pt"
+
+
+
+RECOGNITION:
+  EMBEDDING_MODEL: "VGG-Face" 
+  DISTANCE_METRIC: "cosine" 
+  # VGG-Face + cosine is generally around 0.68 for LFW
+  VERIFICATION_THRESHOLD: 0.68 
+
+
+DEVICE: "cuda"
+
+
+
+CAMERA_SOURCES:
+   # Webcam disabled to keep camera light off
+   - name: "Webcam"
+     source: 0
+   - name: "DroidCam-Phone"
+     source: "http://192.168.137.226:4747/video"
+# Note: Uncomment Webcam lines above to enable laptop camera
+
+
+
+DEDUPLICATION:
+  SAME_CAMERA_COOLDOWN_SECONDS: 15
+  CROSS_CAMERA_COOLDOWN_SECONDS: 30
+  MAX_ACCEPTED_DISTANCE: null
+
+
+
+ATTENDANCE:
+  COOLDOWN_HOURS: 4
+  LOG_FILE: "attendance/attendance_log.csv"
