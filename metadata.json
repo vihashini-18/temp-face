@@ -1,0 +1,5 @@
+{
+  "name": "Face Recognition Attendance System",
+  "description": "A web dashboard to monitor and manage a face recognition-based student attendance system. It provides real-time attendance logs, student and camera management, and an overview dashboard.",
+  "requestFramePermissions": []
+}
